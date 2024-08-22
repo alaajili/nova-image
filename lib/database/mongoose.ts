@@ -1,4 +1,3 @@
-import exp from 'constants';
 import mongoose, { Mongoose } from 'mongoose';
 
 const MONGODB_URL = process.env.MONGODB_URL;
@@ -17,7 +16,7 @@ if (!cachedConnection) {
   };
 }
 
-export const connectToDatabse = async () => {
+export const connectToDatabase = async () => {
   if (cachedConnection.connection) {
     return cachedConnection.connection;
   }
