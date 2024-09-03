@@ -56,7 +56,7 @@ export const Collection = ({
       {images.length > 0 ? (
         <ul className="collection-list">
           {images.map((image) => (
-            <Card image={image} />
+            <Card key={image.publicId} image={image}/>
           ))}
         </ul>
       ) : (

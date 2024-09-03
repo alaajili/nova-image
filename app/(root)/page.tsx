@@ -1,6 +1,6 @@
 import { Collection } from '@/components/shared/Collection'
 import { navLinks } from '@/constants'
-import { getImages } from '@/lib/actions/image.actions'
+import { getAllImages } from '@/lib/actions/image.actions'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -9,7 +9,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
   const page = Number(searchParams?.page) || 1;
   const searchQuery = searchParams?.query as string || '';
 
-  const images = await getImages({ page, searchQuery });
+  const images = await getAllImages({ page, searchQuery });
 
   return (
     <>
@@ -39,7 +39,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         <Collection
           hasSearch={true}
           images={images?.data}
-          totalPages={images?.totalPages}
+          totalPages={images?.totalPage}
           page={page}
         />
       </section>
