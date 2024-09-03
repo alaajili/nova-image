@@ -64,8 +64,6 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
             <h3 className="h3-bold text-dark-600">Original</h3>
 
             <Image
-              priority={true}
-              layout='intrinsic'
               width={getImageSize(image.transformationType, image, "width")}
               height={getImageSize(image.transformationType, image, "height")}
               src={image.secureURL}
